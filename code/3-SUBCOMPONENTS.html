@@ -90,13 +90,30 @@
 			}
 
 			class Comment extends React.Component {
+				constructor(props){
+					super(props);
+					this.state = {
+						maxLetters: props.maxLetters,
+						remainingLetters: props.maxLetters.length
+					}
+				}
+
+				handleInputChange(e){
+					this.setState({
+						value: e.target.value,
+						remainingLetters: this.state.maxLetters - e.target.value.length
+					});
+				}
+
 				render () {
 					return (
 						<div>
-							<textarea className="form-control"
-								placeholder="Write a comment...">
+							<textarea
+								className="form-control"
+								placeholder="Write a comment..."
+								onChange={this.handleInputChange.bind(this)}>
 							</textarea>
-							<small>{this.props.maxLetters} Remaining</small>
+							<small>{this.state.remainingLetters} Remaining</small>
 						</div>
 					)
 				}
