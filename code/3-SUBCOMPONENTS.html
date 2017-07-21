@@ -72,7 +72,7 @@
 							<LikeIcon liked={this.state.liked} />
 							<hr className="my-4"></hr>
 							<div>
-								<button type="button" onClick={this.toggleLikedState.bind(this)}>
+								<button type="button" onClick={this.toggleLikedState.bind(this)} className={ "btn no-outline " + (this.state.liked ? "btn-outline-primary" : "btn-secondary") }>
 									<i className="fa fa-thumbs-o-up fa-4 align-middle" aria-hidden="true"></i>
 									&nbsp;
 									<span className="align-middle">Like</span>
