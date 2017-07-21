@@ -36,12 +36,6 @@
 		<div id="root"></div>
 		<script type="text/jsx">
 			class LikeIcon extends React.Component {
-				constructor(props){
-					super(props);
-
-					console.log(this);
-				}
-
 				render () {
 					if (this.props.liked) {
 						return (
@@ -93,8 +87,8 @@
 				constructor(props){
 					super(props);
 					this.state = {
-						maxLetters: props.maxLetters,
-						remainingLetters: props.maxLetters.length
+						maxLetters: this.props.maxLetters,
+						remainingLetters: this.props.maxLetters
 					}
 				}
 
